@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.7d97537d.css",
-    "main.js": "/static/js/main.431e4460.js",
-    "index.html": "/index.html",
-    "main.7d97537d.css.map": "/static/css/main.7d97537d.css.map",
-    "main.431e4460.js.map": "/static/js/main.431e4460.js.map"
+    "main.css": "/kafedra-portal/static/css/main.7d97537d.css",
+    "main.js": "/kafedra-portal/static/js/main.2a9ea871.js",
+    "index.html": "/kafedra-portal/index.html",
+    "main.7d97537d.css.map": "/kafedra-portal/static/css/main.7d97537d.css.map",
+    "main.2a9ea871.js.map": "/kafedra-portal/static/js/main.2a9ea871.js.map"
   },
   "entrypoints": [
     "static/css/main.7d97537d.css",
-    "static/js/main.431e4460.js"
+    "static/js/main.2a9ea871.js"
   ]
 }
