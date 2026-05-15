@@ -1,0 +1,770 @@
+.curriculum-body {
+  width: 100%;
+  min-height: 100%;
+  padding: 16px;
+  background: #eef2f6;
+  font-family: Arial, sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.curriculum-body * {
+  box-sizing: border-box;
+}
+
+.plan-page {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.title-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title-box h1 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  font-weight: 800;
+  color: #102a43;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.meta label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.meta select {
+  height: 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 3px 8px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.plan-page button {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  transition: 0.15s ease;
+  white-space: nowrap;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.plan-page button:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.plan-page .btn-primary {
+  background: #2F6DF6;
+  color: #ffffff;
+  border-color: #1f4f82;
+}
+
+.plan-page .btn-primary:hover {
+  background: #173b61;
+  border-color: #173b61;
+}
+
+.plan-page .btn-secondary {
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.status-bar {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.mode-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.mode-edit {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.mode-read {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  max-height: 76vh;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  background: #ffffff;
+  position: relative;
+}
+
+#planTable {
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 2350px;
+  background: #ffffff;
+  font-size: 9.5px;
+  font-family: "Times New Roman", Arial, sans-serif;
+}
+
+#planTable th,
+#planTable td {
+  border: 1px solid #6b7280;
+  height: 25px;
+  min-width: 44px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  background: #ffffff;
+}
+
+#planTable th {
+  background: #f1f5f9;
+  color: #111827;
+  font-weight: 700;
+  padding: 3px 2px;
+  height: 34px;
+  line-height: 1.1;
+  font-size: 9.5px;
+  white-space: normal;
+}
+
+.disc-col {
+  min-width: 250px;
+  width: 250px;
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  border-right: 2px solid #374151 !important;
+}
+
+#planTable thead .disc-col {
+  background: #f1f5f9 !important;
+  z-index: 8;
+  text-align: center;
+}
+
+#planTable tbody .disc-col {
+  background: #ffffff !important;
+  text-align: left;
+}
+
+#planTable input.cell {
+  width: 100%;
+  height: 24px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  padding: 1px 2px;
+  font-size: 9.5px;
+  color: #111827;
+  font-family: "Times New Roman", Arial, sans-serif;
+}
+
+#planTable input.cell:focus {
+  background: #fff8bf;
+  box-shadow: inset 0 0 0 2px #facc15;
+}
+
+#planTable input.discipline-cell {
+  text-align: left;
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+#planTable input[disabled] {
+  color: #111827;
+  opacity: 1;
+  cursor: default;
+}
+
+#planTable .block-row td,
+#planTable .block-row input {
+  background: #eef6ff !important;
+  font-weight: 900;
+  border-top: 2px solid #2563eb !important;
+  border-bottom: 2px solid #2563eb !important;
+}
+
+#planTable .discipline-row td,
+#planTable .discipline-row input {
+  background: #ffffff;
+}
+
+#planTable .total-row td,
+#planTable .total-row input {
+  background: #f3f4f6 !important;
+  font-weight: 900;
+  border-top: 2px solid #64748b !important;
+}
+
+#planTable .grand-total td,
+#planTable .grand-total input {
+  background: #dbeafe !important;
+  font-weight: 900;
+  border-top: 2px solid #1d4ed8 !important;
+}
+
+.block-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 4px;
+  height: 25px;
+}
+
+.block-cell input {
+  flex: 1;
+}
+
+.plan-page .mini-btn {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  padding: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+.plan-page .mini-plus {
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.plan-page .mini-plus:hover {
+  background: #dcfce7;
+  border-color: #4ade80;
+}
+
+.plan-page .mini-del {
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.plan-page .mini-del:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.readonly .edit-only {
+  display: none !important;
+}
+
+.readonly input {
+  pointer-events: none;
+}
+
+.print-area {
+  display: none;
+  background: #ffffff;
+  color: #111827;
+  font-family: "Times New Roman", Arial, sans-serif;
+}
+
+.print-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.print-meta {
+  font-size: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.semester-section {
+  margin-bottom: 18px;
+  page-break-inside: avoid;
+}
+
+.semester-title {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 10px 0 6px;
+  text-align: center;
+}
+
+.semester-table {
+  width: 100%;
+  min-width: auto;
+  font-size: 10px;
+  border-collapse: collapse;
+}
+
+.semester-table th,
+.semester-table td {
+  border: 1px solid #555;
+  height: 24px;
+  padding: 2px 3px;
+  min-width: auto;
+}
+
+.semester-table th {
+  background: #f1f5f9;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.semester-table .name-print {
+  width: 36%;
+  text-align: left;
+}
+
+.semester-table .block-print td {
+  background: #eef6ff;
+  font-weight: 900;
+}
+
+.semester-table .total-print td {
+  background: #f3f4f6;
+  font-weight: 900;
+}
+
+.semester-table .grand-print td {
+  background: #dbeafe;
+  font-weight: 900;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 8mm;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #printArea,
+  #printArea * {
+    visibility: visible !important;
+  }
+
+  #printArea {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  .semester-section {
+    page-break-after: always;
+  }
+
+  .semester-section:last-child {
+    page-break-after: auto;
+  }
+}
+.curriculum-body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 100%;
+  background: #eef2f6;
+  font-family: Arial, sans-serif;
+  color: #111827;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.curriculum-body * {
+  box-sizing: border-box;
+}
+
+.plan-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  background: #ffffff;
+  position: relative;
+}
+
+#planTable {
+  border-collapse: collapse;
+  width: 2350px;
+  min-width: 2350px;
+  max-width: none;
+  background: #ffffff;
+  font-size: 9.5px;
+  font-family: "Times New Roman", Arial, sans-serif;
+}
+/* ===================================================== */
+/* MOBILE ADAPTATION — CURRICULUM PLAN PAGE              */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  .curriculum-body {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .plan-page {
+    height: auto;
+    min-height: 100vh;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: visible;
+  }
+
+  .top-panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+  }
+
+  .title-box {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .title-box h1 {
+    font-size: 17px;
+    line-height: 1.25;
+    margin-bottom: 7px;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .meta label {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .meta select {
+    width: 100%;
+    height: 34px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .actions,
+  .bottom-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    justify-content: stretch;
+  }
+
+  .bottom-actions {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .plan-page button {
+    width: 100%;
+    min-height: 34px;
+    padding: 7px 8px;
+    font-size: 10.5px;
+    border-radius: 8px;
+  }
+
+  .status-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 8px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .mode-badge {
+    width: max-content;
+    padding: 5px 9px;
+    font-size: 10.5px;
+  }
+
+  .table-wrapper {
+    width: 100%;
+    height: 60vh;
+    min-height: 360px;
+    max-height: 540px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-radius: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #planTable {
+    width: 1750px;
+    min-width: 1750px;
+    font-size: 8px;
+  }
+
+  #planTable th,
+  #planTable td {
+    height: 23px;
+    min-width: 34px;
+  }
+
+  #planTable th {
+    height: 30px;
+    font-size: 7.8px;
+    padding: 2px 1px;
+  }
+
+  #planTable input.cell {
+    height: 22px;
+    font-size: 8px;
+    padding: 1px;
+  }
+
+  #planTable input.discipline-cell {
+    padding-left: 4px;
+  }
+
+  .disc-col {
+    min-width: 190px;
+    width: 190px;
+  }
+
+  .block-cell {
+    height: 23px;
+    gap: 3px;
+    padding: 0 3px;
+  }
+
+  .plan-page .mini-btn {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+
+  .print-title {
+    font-size: 15px;
+  }
+
+  .print-meta {
+    font-size: 10px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curriculum-body {
+    padding: 6px;
+  }
+
+  .plan-page {
+    padding: 8px;
+    border-radius: 9px;
+  }
+
+  .title-box h1 {
+    font-size: 15.5px;
+  }
+
+  .meta label {
+    font-size: 10px;
+  }
+
+  .meta select {
+    height: 32px;
+    font-size: 10.5px;
+  }
+
+  .actions,
+  .bottom-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-page button {
+    min-height: 33px;
+    font-size: 10px;
+  }
+
+  .status-bar {
+    font-size: 10px;
+  }
+
+  .mode-badge {
+    font-size: 10px;
+  }
+
+  .table-wrapper {
+    height: 58vh;
+    min-height: 330px;
+  }
+
+  #planTable {
+    width: 1550px;
+    min-width: 1550px;
+    font-size: 7.3px;
+  }
+
+  #planTable th,
+  #planTable td {
+    height: 22px;
+    min-width: 30px;
+  }
+
+  #planTable th {
+    height: 28px;
+    font-size: 7px;
+  }
+
+  #planTable input.cell {
+    height: 21px;
+    font-size: 7.3px;
+  }
+
+  .disc-col {
+    min-width: 165px;
+    width: 165px;
+  }
+
+  .block-cell {
+    height: 22px;
+  }
+
+  .plan-page .mini-btn {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .title-box h1 {
+    font-size: 14px;
+  }
+
+  #planTable {
+    width: 1450px;
+    min-width: 1450px;
+  }
+
+  .disc-col {
+    min-width: 150px;
+    width: 150px;
+  }
+
+  .table-wrapper {
+    min-height: 310px;
+  }
+}

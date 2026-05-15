@@ -1,0 +1,444 @@
+/* src/components/Teacher/TeacherSidebar.css */
+
+/* ===================================================== */
+/* TEACHER / LAB SIDEBAR - ADMIN STYLE                   */
+/* ===================================================== */
+
+.teacher-sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: 1px solid #e2e8f0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.teacher-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.teacher-sidebar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.teacher-sidebar::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 999px;
+}
+
+/* ===================================================== */
+/* LOGO AREA                                             */
+/* ===================================================== */
+
+.teacher-sidebar .sidebar-top {
+  padding: 26px 20px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.teacher-sidebar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.teacher-sidebar .logo-image {
+  width: 65px !important;
+  height: 65px !important;
+  min-width: 65px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.teacher-sidebar .logo-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.teacher-sidebar .logo-text h2 {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 17px;
+  line-height: 1.18;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+
+.teacher-sidebar .logo-text p {
+  margin: 0;
+  color: #8b5cf6;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 650;
+}
+
+/* ===================================================== */
+/* NAVIGATION                                            */
+/* ===================================================== */
+
+.teacher-sidebar .sidebar-nav {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.teacher-sidebar .nav-item,
+.teacher-sidebar .settings-btn {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #475569;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+  text-align: left;
+
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 750;
+
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+.teacher-sidebar .nav-icon {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+}
+
+.teacher-sidebar .nav-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
+.teacher-sidebar .nav-name {
+  flex: 1;
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: inherit;
+}
+
+.teacher-sidebar .nav-item:hover,
+.teacher-sidebar .settings-btn:hover {
+  background: #f5f3ff;
+  color: #8b5cf6;
+  border-color: #c4b5fd;
+  transform: translateX(4px);
+}
+
+.teacher-sidebar .nav-item.active,
+.teacher-sidebar .settings-btn.active {
+  background: #f5f3ff;
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
+}
+
+/* ===================================================== */
+/* SETTINGS BOTTOM                                       */
+/* ===================================================== */
+
+.teacher-sidebar .sidebar-bottom {
+  padding: 18px 16px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 18px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================================== */
+/* DARK MODE                                             */
+/* ===================================================== */
+
+body.dark-mode .teacher-sidebar,
+.teacher-dashboard.dark .teacher-sidebar,
+.admin-dashboard.dark .teacher-sidebar {
+  background: #1e293b;
+  border-right-color: #334155;
+}
+
+body.dark-mode .teacher-sidebar .sidebar-top,
+.teacher-dashboard.dark .teacher-sidebar .sidebar-top,
+.admin-dashboard.dark .teacher-sidebar .sidebar-top {
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .teacher-sidebar .sidebar-bottom,
+.teacher-dashboard.dark .teacher-sidebar .sidebar-bottom,
+.admin-dashboard.dark .teacher-sidebar .sidebar-bottom {
+  border-top-color: #334155;
+}
+
+body.dark-mode .teacher-sidebar .logo-text h2,
+.teacher-dashboard.dark .teacher-sidebar .logo-text h2,
+.admin-dashboard.dark .teacher-sidebar .logo-text h2 {
+  color: #f8fafc;
+}
+
+body.dark-mode .teacher-sidebar .logo-text p,
+.teacher-dashboard.dark .teacher-sidebar .logo-text p,
+.admin-dashboard.dark .teacher-sidebar .logo-text p {
+  color: #a78bfa;
+}
+
+body.dark-mode .teacher-sidebar .nav-item,
+body.dark-mode .teacher-sidebar .settings-btn,
+.teacher-dashboard.dark .teacher-sidebar .nav-item,
+.teacher-dashboard.dark .teacher-sidebar .settings-btn,
+.admin-dashboard.dark .teacher-sidebar .nav-item,
+.admin-dashboard.dark .teacher-sidebar .settings-btn {
+  color: #cbd5e1;
+  background: transparent;
+}
+
+body.dark-mode .teacher-sidebar .nav-item:hover,
+body.dark-mode .teacher-sidebar .settings-btn:hover,
+.teacher-dashboard.dark .teacher-sidebar .nav-item:hover,
+.teacher-dashboard.dark .teacher-sidebar .settings-btn:hover,
+.admin-dashboard.dark .teacher-sidebar .nav-item:hover,
+.admin-dashboard.dark .teacher-sidebar .settings-btn:hover {
+  background: #2d2a4a;
+  color: #a78bfa;
+  border-color: #a78bfa;
+}
+
+body.dark-mode .teacher-sidebar .nav-item.active,
+body.dark-mode .teacher-sidebar .settings-btn.active,
+.teacher-dashboard.dark .teacher-sidebar .nav-item.active,
+.teacher-dashboard.dark .teacher-sidebar .settings-btn.active,
+.admin-dashboard.dark .teacher-sidebar .nav-item.active,
+.admin-dashboard.dark .teacher-sidebar .settings-btn.active {
+  background: #2d2a4a;
+  color: #a78bfa;
+  border-color: #a78bfa;
+  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.18);
+}
+
+/* ===================================================== */
+/* TABLET / PHONE                                        */
+/* ===================================================== */
+
+@media (max-width: 768px) {
+  .teacher-sidebar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    display: block !important;
+    overflow: visible !important;
+
+    background: #ffffff !important;
+    border-right: none !important;
+    border-bottom: 1px solid #d9e2ef !important;
+
+    z-index: 50 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .teacher-sidebar .sidebar-top {
+    display: flex !important;
+    width: 100% !important;
+
+    padding: 10px 12px !important;
+    margin: 0 !important;
+
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .teacher-sidebar .logo {
+    width: 100% !important;
+    gap: 9px !important;
+  }
+
+  .teacher-sidebar .logo-image {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 12px !important;
+  }
+
+  .teacher-sidebar .logo-text h2 {
+    margin: 0 0 2px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    font-weight: 850 !important;
+    color: #1e293b !important;
+    white-space: normal !important;
+  }
+
+  .teacher-sidebar .logo-text p {
+    margin: 0 !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    color: #8b5cf6 !important;
+    white-space: normal !important;
+  }
+
+  .teacher-sidebar .sidebar-nav {
+    width: 100% !important;
+    padding: 8px !important;
+    margin: 0 !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .teacher-sidebar .nav-item,
+  .teacher-sidebar .settings-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    height: 40px !important;
+    min-height: 40px !important;
+
+    padding: 7px 9px !important;
+    border-radius: 12px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 7px !important;
+
+    background: #ffffff !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+
+    font-size: 10.5px !important;
+    font-weight: 750 !important;
+    text-align: left !important;
+
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .teacher-sidebar .nav-item:hover,
+  .teacher-sidebar .settings-btn:hover {
+    transform: none !important;
+    background: #f5f3ff !important;
+    color: #8b5cf6 !important;
+    border-color: #c4b5fd !important;
+  }
+
+  .teacher-sidebar .nav-item.active,
+  .teacher-sidebar .settings-btn.active {
+    background: #f5f3ff !important;
+    color: #8b5cf6 !important;
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 3px 10px rgba(139, 92, 246, 0.14) !important;
+  }
+
+  .teacher-sidebar .nav-icon {
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 18px !important;
+  }
+
+  .teacher-sidebar .nav-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .teacher-sidebar .nav-name {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: block !important;
+
+    font-size: 10.5px !important;
+    line-height: 1.1 !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .teacher-sidebar .sidebar-bottom {
+    width: 100% !important;
+    padding: 0 8px 8px !important;
+    margin: 0 !important;
+    border-top: none !important;
+  }
+}
+
+/* ===================================================== */
+/* VERY SMALL PHONE                                      */
+/* ===================================================== */
+
+@media (max-width: 420px) {
+  .teacher-sidebar .sidebar-nav {
+    grid-template-columns: 1fr !important;
+  }
+
+  .teacher-sidebar .nav-item,
+  .teacher-sidebar .settings-btn {
+    height: 38px !important;
+    min-height: 38px !important;
+    font-size: 10px !important;
+  }
+
+  .teacher-sidebar .nav-name {
+    font-size: 10px !important;
+  }
+
+  .teacher-sidebar .logo-image {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .teacher-sidebar .logo-text h2 {
+    font-size: 11px !important;
+  }
+
+  .teacher-sidebar .logo-text p {
+    font-size: 8.8px !important;
+  }
+}

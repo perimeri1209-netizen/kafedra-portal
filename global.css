@@ -1,0 +1,1097 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: #f3f7fc;
+  color: #061735;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   LIGHT THEME VARIABLES
+===================================================== */
+
+body,
+body.light-mode {
+  --portal-bg: #f3f7fc;
+  --portal-bg-soft: #eef4fb;
+  --portal-card: #ffffff;
+  --portal-card-soft: #f8fbff;
+  --portal-card-hover: #f4f7fb;
+  --portal-border: #dbe6f3;
+  --portal-border-strong: #cbd8ea;
+
+  --portal-text: #061735;
+  --portal-text-soft: #334155;
+  --portal-muted: #64748b;
+  --portal-muted-2: #94a3b8;
+
+  --portal-primary: #7c5cff;
+  --portal-primary-soft: rgba(124, 92, 255, 0.12);
+  --portal-primary-border: rgba(124, 92, 255, 0.55);
+
+  --portal-green: #009b63;
+  --portal-orange: #fb923c;
+  --portal-red: #ef4444;
+  --portal-blue: #2563eb;
+
+  --portal-shadow: 0 16px 40px rgba(15, 23, 42, 0.07);
+  --portal-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+/* =====================================================
+   DARK THEME VARIABLES
+===================================================== */
+
+body.dark-mode {
+  --portal-bg: #0f172a;
+  --portal-bg-soft: #111827;
+  --portal-card: #172033;
+  --portal-card-soft: #1e293b;
+  --portal-card-hover: #263449;
+  --portal-border: rgba(148, 163, 184, 0.25);
+  --portal-border-strong: rgba(203, 213, 225, 0.35);
+
+  --portal-text: #f8fafc;
+  --portal-text-soft: #e5e7eb;
+  --portal-muted: #cbd5e1;
+  --portal-muted-2: #94a3b8;
+
+  --portal-primary: #8b5cf6;
+  --portal-primary-soft: rgba(139, 92, 246, 0.18);
+  --portal-primary-border: rgba(139, 92, 246, 0.6);
+
+  --portal-green: #34d399;
+  --portal-orange: #fb923c;
+  --portal-red: #f87171;
+  --portal-blue: #93c5fd;
+
+  --portal-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+  --portal-shadow-soft: 0 12px 35px rgba(0, 0, 0, 0.22);
+
+  background: var(--portal-bg) !important;
+  color: var(--portal-text) !important;
+}
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.admin-dashboard,
+.teacher-dashboard,
+.admin-main,
+.teacher-main,
+.dashboard-content,
+.teacher-content,
+.main-content,
+.page-content,
+.admin-section-page,
+.teacher-section-page {
+  background: var(--portal-bg);
+  color: var(--portal-text);
+}
+
+body.dark-mode .admin-dashboard,
+body.dark-mode .teacher-dashboard,
+body.dark-mode .admin-main,
+body.dark-mode .teacher-main,
+body.dark-mode .dashboard-content,
+body.dark-mode .teacher-content,
+body.dark-mode .main-content,
+body.dark-mode .page-content,
+body.dark-mode .admin-section-page,
+body.dark-mode .teacher-section-page {
+  background: var(--portal-bg) !important;
+  color: var(--portal-text) !important;
+}
+
+/* =====================================================
+   TEXT COLORS
+===================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--portal-text);
+}
+
+p,
+span,
+label,
+small {
+  color: inherit;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: var(--portal-text) !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode small,
+body.dark-mode b,
+body.dark-mode strong {
+  opacity: 1 !important;
+}
+
+body.dark-mode p,
+body.dark-mode label,
+body.dark-mode small {
+  color: var(--portal-muted) !important;
+}
+
+body.dark-mode b,
+body.dark-mode strong {
+  color: var(--portal-text) !important;
+}
+
+/* =====================================================
+   TOPBAR
+===================================================== */
+
+.admin-topbar,
+.teacher-topbar,
+.topbar {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border-bottom: 1px solid var(--portal-border);
+}
+
+body.dark-mode .admin-topbar,
+body.dark-mode .teacher-topbar,
+body.dark-mode .topbar {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+.topbar-title h1,
+.topbar-title h2,
+.topbar-title h3,
+.admin-topbar h1,
+.admin-topbar h2,
+.teacher-topbar h1,
+.teacher-topbar h2 {
+  color: var(--portal-text);
+}
+
+.topbar-title p,
+.admin-topbar p,
+.teacher-topbar p {
+  color: var(--portal-muted);
+}
+
+body.dark-mode .topbar-title h1,
+body.dark-mode .topbar-title h2,
+body.dark-mode .topbar-title h3,
+body.dark-mode .admin-topbar h1,
+body.dark-mode .admin-topbar h2,
+body.dark-mode .teacher-topbar h1,
+body.dark-mode .teacher-topbar h2 {
+  color: var(--portal-text) !important;
+}
+
+body.dark-mode .topbar-title p,
+body.dark-mode .admin-topbar p,
+body.dark-mode .teacher-topbar p {
+  color: var(--portal-muted) !important;
+}
+
+/* Topbar buttons */
+
+.topbar-icon-btn,
+.lang-switcher,
+.lang-btn,
+.profile-btn,
+.teacher-profile-btn,
+.admin-profile-btn {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+body.dark-mode .topbar-icon-btn,
+body.dark-mode .lang-switcher,
+body.dark-mode .lang-btn,
+body.dark-mode .profile-btn,
+body.dark-mode .teacher-profile-btn,
+body.dark-mode .admin-profile-btn {
+  background: var(--portal-card-soft) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+.lang-btn.active,
+body.dark-mode .lang-btn.active {
+  background: var(--portal-primary) !important;
+  color: #ffffff !important;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar,
+.teacher-sidebar {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border-right: 1px solid var(--portal-border);
+}
+
+body.dark-mode .admin-sidebar,
+body.dark-mode .teacher-sidebar {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+.logo-text h2,
+.sidebar-logo h2,
+.sidebar-top h2 {
+  color: var(--portal-text);
+}
+
+.logo-text p,
+.sidebar-logo p,
+.sidebar-top p {
+  color: var(--portal-muted);
+}
+
+body.dark-mode .logo-text h2,
+body.dark-mode .sidebar-logo h2,
+body.dark-mode .sidebar-top h2 {
+  color: var(--portal-text) !important;
+}
+
+body.dark-mode .logo-text p,
+body.dark-mode .sidebar-logo p,
+body.dark-mode .sidebar-top p {
+  color: var(--portal-muted) !important;
+}
+
+.nav-item,
+.sidebar-menu-item,
+.settings-btn {
+  color: var(--portal-text-soft);
+  background: transparent;
+}
+
+.nav-item svg,
+.sidebar-menu-item svg,
+.settings-btn svg {
+  color: inherit;
+  stroke: currentColor;
+}
+
+.nav-item:hover,
+.sidebar-menu-item:hover,
+.settings-btn:hover {
+  background: var(--portal-primary-soft);
+  color: var(--portal-primary);
+}
+
+.nav-item.active,
+.sidebar-menu-item.active,
+.settings-btn.active {
+  background: var(--portal-primary-soft);
+  color: var(--portal-primary);
+  border-color: var(--portal-primary-border);
+}
+
+body.dark-mode .nav-item,
+body.dark-mode .sidebar-menu-item,
+body.dark-mode .settings-btn {
+  color: var(--portal-muted) !important;
+}
+
+body.dark-mode .nav-item:hover,
+body.dark-mode .sidebar-menu-item:hover,
+body.dark-mode .settings-btn:hover {
+  background: var(--portal-primary-soft) !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .nav-item.active,
+body.dark-mode .sidebar-menu-item.active,
+body.dark-mode .settings-btn.active {
+  background: var(--portal-primary-soft) !important;
+  color: #ffffff !important;
+  border-color: var(--portal-primary-border) !important;
+}
+
+/* =====================================================
+   DASHBOARD CARDS
+===================================================== */
+
+.dashboard-card,
+.stat-card,
+.admin-stat-card,
+.teacher-stat-card,
+.summary-card,
+.section-card,
+.report-card,
+.reports-card,
+.activity-card,
+.recent-card,
+.activity-panel,
+.recent-panel,
+.activity-section,
+.recent-section,
+.activity-chart-card,
+.recent-actions-card,
+.teacher-settings-shell,
+.teacher-settings-box,
+.settings-page,
+.settings-card,
+.settings-box,
+.teacher-settings-page,
+.teacher-settings-card {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+  box-shadow: var(--portal-shadow);
+}
+
+body.dark-mode .dashboard-card,
+body.dark-mode .stat-card,
+body.dark-mode .admin-stat-card,
+body.dark-mode .teacher-stat-card,
+body.dark-mode .summary-card,
+body.dark-mode .section-card,
+body.dark-mode .report-card,
+body.dark-mode .reports-card,
+body.dark-mode .activity-card,
+body.dark-mode .recent-card,
+body.dark-mode .activity-panel,
+body.dark-mode .recent-panel,
+body.dark-mode .activity-section,
+body.dark-mode .recent-section,
+body.dark-mode .activity-chart-card,
+body.dark-mode .recent-actions-card,
+body.dark-mode .teacher-settings-shell,
+body.dark-mode .teacher-settings-box,
+body.dark-mode .settings-page,
+body.dark-mode .settings-card,
+body.dark-mode .settings-box,
+body.dark-mode .teacher-settings-page,
+body.dark-mode .teacher-settings-card {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+  box-shadow: var(--portal-shadow) !important;
+}
+
+/* Card text */
+
+.dashboard-card h3,
+.dashboard-card h4,
+.stat-card h3,
+.stat-card h4,
+.admin-stat-card h3,
+.admin-stat-card h4,
+.teacher-stat-card h3,
+.teacher-stat-card h4,
+.summary-card h3,
+.section-card h3,
+.card-title,
+.stat-title {
+  color: var(--portal-muted);
+}
+
+.dashboard-card p,
+.stat-card p,
+.admin-stat-card p,
+.teacher-stat-card p,
+.summary-card p,
+.section-card p {
+  color: var(--portal-muted);
+}
+
+.stat-number,
+.card-number,
+.count,
+.value,
+.dashboard-card .stat-number,
+.stat-card .stat-number,
+.teacher-stat-card .stat-number {
+  color: var(--portal-text);
+  font-weight: 800;
+}
+
+.stat-subtitle,
+.card-subtitle,
+.dashboard-card small,
+.stat-card small,
+.teacher-stat-card small {
+  color: var(--portal-green);
+  font-weight: 700;
+}
+
+body.dark-mode .dashboard-card h3,
+body.dark-mode .dashboard-card h4,
+body.dark-mode .stat-card h3,
+body.dark-mode .stat-card h4,
+body.dark-mode .admin-stat-card h3,
+body.dark-mode .admin-stat-card h4,
+body.dark-mode .teacher-stat-card h3,
+body.dark-mode .teacher-stat-card h4,
+body.dark-mode .summary-card h3,
+body.dark-mode .section-card h3,
+body.dark-mode .card-title,
+body.dark-mode .stat-title {
+  color: var(--portal-muted) !important;
+}
+
+body.dark-mode .stat-number,
+body.dark-mode .card-number,
+body.dark-mode .count,
+body.dark-mode .value,
+body.dark-mode .dashboard-card .stat-number,
+body.dark-mode .stat-card .stat-number,
+body.dark-mode .teacher-stat-card .stat-number {
+  color: #ffffff !important;
+}
+
+body.dark-mode .stat-subtitle,
+body.dark-mode .card-subtitle,
+body.dark-mode .dashboard-card small,
+body.dark-mode .stat-card small,
+body.dark-mode .teacher-stat-card small {
+  color: var(--portal-green) !important;
+}
+
+/* Icon boxes */
+
+.stat-icon,
+.card-icon,
+.dashboard-card-icon,
+.teacher-stat-icon {
+  background: var(--portal-primary-soft);
+  color: var(--portal-primary);
+}
+
+body.dark-mode .stat-icon,
+body.dark-mode .card-icon,
+body.dark-mode .dashboard-card-icon,
+body.dark-mode .teacher-stat-icon {
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: #c4b5fd !important;
+}
+
+/* =====================================================
+   ACTIVITY / RECENT ACTIONS
+===================================================== */
+
+.activity-header,
+.recent-header,
+.chart-header {
+  background: var(--portal-card-soft);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+body.dark-mode .activity-header,
+body.dark-mode .recent-header,
+body.dark-mode .chart-header {
+  background: var(--portal-card-soft) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+.activity-header h3,
+.recent-header h3,
+.chart-header h3 {
+  color: var(--portal-text);
+}
+
+body.dark-mode .activity-header h3,
+body.dark-mode .recent-header h3,
+body.dark-mode .chart-header h3 {
+  color: var(--portal-text) !important;
+}
+
+.recent-action-item,
+.activity-item,
+.action-item {
+  background: var(--portal-card-soft);
+  border: 1px solid var(--portal-border);
+  color: var(--portal-text);
+}
+
+body.dark-mode .recent-action-item,
+body.dark-mode .activity-item,
+body.dark-mode .action-item {
+  background: var(--portal-card-soft) !important;
+  border-color: var(--portal-border) !important;
+  color: var(--portal-text) !important;
+}
+
+.recent-action-item p,
+.recent-action-item span,
+.activity-item p,
+.activity-item span {
+  color: var(--portal-text);
+}
+
+.recent-action-item small,
+.activity-item small {
+  color: var(--portal-muted);
+}
+
+body.dark-mode .recent-action-item p,
+body.dark-mode .recent-action-item span,
+body.dark-mode .activity-item p,
+body.dark-mode .activity-item span {
+  color: var(--portal-text) !important;
+}
+
+body.dark-mode .recent-action-item small,
+body.dark-mode .activity-item small {
+  color: var(--portal-muted) !important;
+}
+
+/* Chart */
+
+.chart-bar-bg,
+.activity-bar-bg {
+  background: #e9eef6;
+}
+
+body.dark-mode .chart-bar-bg,
+body.dark-mode .activity-bar-bg {
+  background: #e5edf7 !important;
+}
+
+.chart-bar-fill,
+.activity-bar-fill {
+  background: linear-gradient(180deg, #6d5dfc, #8b7cf6);
+}
+
+.chart-day,
+.activity-day,
+.chart-value,
+.activity-value {
+  color: var(--portal-muted);
+}
+
+body.dark-mode .chart-day,
+body.dark-mode .activity-day,
+body.dark-mode .chart-value,
+body.dark-mode .activity-value {
+  color: var(--portal-muted) !important;
+}
+
+/* =====================================================
+   SECTION TOOLBAR / SEARCH / FILTERS
+===================================================== */
+
+.section-toolbar,
+.toolbar,
+.mini-toolbar,
+.admin-toolbar,
+.filters-row,
+.search-box {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+body.dark-mode .section-toolbar,
+body.dark-mode .toolbar,
+body.dark-mode .mini-toolbar,
+body.dark-mode .admin-toolbar,
+body.dark-mode .filters-row,
+body.dark-mode .search-box {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+.section-toolbar h2,
+.section-toolbar h3,
+.admin-toolbar h2,
+.admin-toolbar h3 {
+  color: var(--portal-text);
+}
+
+body.dark-mode .section-toolbar h2,
+body.dark-mode .section-toolbar h3,
+body.dark-mode .admin-toolbar h2,
+body.dark-mode .admin-toolbar h3 {
+  color: var(--portal-text) !important;
+}
+
+/* =====================================================
+   FORMS
+===================================================== */
+
+input,
+select,
+textarea,
+.mini-filter-select,
+.search-input {
+  background: #ffffff;
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+input::placeholder,
+textarea::placeholder,
+.search-input::placeholder {
+  color: var(--portal-muted-2);
+  opacity: 1;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .mini-filter-select,
+body.dark-mode .search-input {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder,
+body.dark-mode .search-input::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode option {
+  background: #111827 !important;
+  color: #f8fafc !important;
+}
+
+/* =====================================================
+   TABLES
+===================================================== */
+
+.table-wrapper,
+.mini-table-wrapper,
+.admin-table-wrapper {
+  background: var(--portal-card);
+  border: 1px solid var(--portal-border);
+  box-shadow: var(--portal-shadow-soft);
+}
+
+table,
+.mini-table,
+.admin-table {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border-color: var(--portal-border);
+}
+
+thead,
+.mini-table thead,
+.admin-table thead {
+  background: var(--portal-card-soft);
+}
+
+th,
+.mini-table th,
+.admin-table th {
+  background: var(--portal-card-soft);
+  color: var(--portal-text);
+  border-color: var(--portal-border);
+  font-weight: 800;
+}
+
+td,
+.mini-table td,
+.admin-table td {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border-color: var(--portal-border);
+}
+
+tr:hover td,
+.mini-table tr:hover td,
+.admin-table tr:hover td {
+  background: var(--portal-card-hover);
+}
+
+td a,
+.mini-table td a,
+.admin-table td a {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+body.dark-mode .table-wrapper,
+body.dark-mode .mini-table-wrapper,
+body.dark-mode .admin-table-wrapper {
+  background: var(--portal-card) !important;
+  border-color: var(--portal-border) !important;
+  box-shadow: var(--portal-shadow-soft) !important;
+}
+
+body.dark-mode table,
+body.dark-mode .mini-table,
+body.dark-mode .admin-table {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode thead,
+body.dark-mode .mini-table thead,
+body.dark-mode .admin-table thead {
+  background: #111827 !important;
+}
+
+body.dark-mode th,
+body.dark-mode .mini-table th,
+body.dark-mode .admin-table th {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode td,
+body.dark-mode .mini-table td,
+body.dark-mode .admin-table td {
+  background: var(--portal-card) !important;
+  color: #f8fafc !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode tr:hover td,
+body.dark-mode .mini-table tr:hover td,
+body.dark-mode .admin-table tr:hover td {
+  background: var(--portal-card-hover) !important;
+}
+
+body.dark-mode td a,
+body.dark-mode .mini-table td a,
+body.dark-mode .admin-table td a {
+  color: #93c5fd !important;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button {
+  color: inherit;
+}
+
+.mini-btn,
+.action-btn,
+.toolbar-btn,
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.download-btn,
+.modal-close {
+  border: 1px solid var(--portal-border);
+}
+
+body.dark-mode .mini-btn,
+body.dark-mode .action-btn,
+body.dark-mode .toolbar-btn,
+body.dark-mode .edit-btn,
+body.dark-mode .download-btn,
+body.dark-mode .modal-close {
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode .mini-btn:hover,
+body.dark-mode .action-btn:hover,
+body.dark-mode .toolbar-btn:hover,
+body.dark-mode .edit-btn:hover,
+body.dark-mode .download-btn:hover,
+body.dark-mode .modal-close:hover {
+  background: var(--portal-primary-soft) !important;
+  color: #ffffff !important;
+}
+
+.save-btn,
+.mini-btn.save,
+.primary-btn {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+}
+
+body.dark-mode .save-btn,
+body.dark-mode .mini-btn.save,
+body.dark-mode .primary-btn {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
+
+.cancel-btn,
+.mini-btn.cancel {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.22);
+}
+
+body.dark-mode .cancel-btn,
+body.dark-mode .mini-btn.cancel {
+  background: rgba(239, 68, 68, 0.16) !important;
+  color: #fecaca !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+.admin-modal-backdrop,
+.modal-backdrop,
+.teacher-profile-modal-backdrop {
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+body.dark-mode .admin-modal-backdrop,
+body.dark-mode .modal-backdrop,
+body.dark-mode .teacher-profile-modal-backdrop {
+  background: rgba(2, 6, 23, 0.76) !important;
+  backdrop-filter: blur(9px);
+}
+
+.admin-modal-window,
+.modal-window,
+.teacher-profile-modal,
+.notifications-panel,
+.profile-dropdown,
+.dropdown-menu {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+  box-shadow: var(--portal-shadow);
+}
+
+body.dark-mode .admin-modal-window,
+body.dark-mode .modal-window,
+body.dark-mode .teacher-profile-modal,
+body.dark-mode .notifications-panel,
+body.dark-mode .profile-dropdown,
+body.dark-mode .dropdown-menu {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+  box-shadow: var(--portal-shadow) !important;
+}
+
+.admin-modal-window h3,
+.modal-window h3,
+.teacher-profile-modal h3 {
+  color: var(--portal-text);
+}
+
+.admin-modal-window p,
+.modal-window p,
+.teacher-profile-modal p {
+  color: var(--portal-muted);
+}
+
+body.dark-mode .admin-modal-window h3,
+body.dark-mode .modal-window h3,
+body.dark-mode .teacher-profile-modal h3 {
+  color: var(--portal-text) !important;
+}
+
+body.dark-mode .admin-modal-window p,
+body.dark-mode .modal-window p,
+body.dark-mode .teacher-profile-modal p {
+  color: var(--portal-muted) !important;
+}
+
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
+
+.notification-item {
+  background: var(--portal-card-soft);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+.notification-item.unread {
+  background: var(--portal-primary-soft);
+}
+
+body.dark-mode .notification-item {
+  background: var(--portal-card-soft) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+body.dark-mode .notification-item.unread {
+  background: var(--portal-primary-soft) !important;
+}
+
+/* =====================================================
+   FOOTER / YEAR BADGE
+===================================================== */
+
+.dashboard-footer,
+.teacher-footer,
+.admin-footer,
+.year-badge {
+  background: var(--portal-card);
+  color: var(--portal-text);
+  border: 1px solid var(--portal-border);
+}
+
+body.dark-mode .dashboard-footer,
+body.dark-mode .teacher-footer,
+body.dark-mode .admin-footer,
+body.dark-mode .year-badge {
+  background: var(--portal-card) !important;
+  color: var(--portal-text) !important;
+  border-color: var(--portal-border) !important;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef2f7;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b5fd;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+::-moz-selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* =====================================================
+   IMPORTANT FINAL FIX
+   Ак режимде текст кара, кара режимде текст ак.
+   Бул эң акырында турушу керек.
+===================================================== */
+
+body:not(.dark-mode) .dashboard-card,
+body:not(.dark-mode) .stat-card,
+body:not(.dark-mode) .admin-stat-card,
+body:not(.dark-mode) .teacher-stat-card,
+body:not(.dark-mode) .activity-card,
+body:not(.dark-mode) .recent-actions-card,
+body:not(.dark-mode) .section-toolbar,
+body:not(.dark-mode) .mini-table-wrapper,
+body:not(.dark-mode) .admin-modal-window {
+  background: #ffffff;
+  color: #061735;
+}
+
+body.dark-mode .dashboard-card,
+body.dark-mode .stat-card,
+body.dark-mode .admin-stat-card,
+body.dark-mode .teacher-stat-card,
+body.dark-mode .activity-card,
+body.dark-mode .recent-actions-card,
+body.dark-mode .section-toolbar,
+body.dark-mode .mini-table-wrapper,
+body.dark-mode .admin-modal-window {
+  background: #172033 !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .dashboard-card *,
+body.dark-mode .stat-card *,
+body.dark-mode .admin-stat-card *,
+body.dark-mode .teacher-stat-card *,
+body.dark-mode .activity-card *,
+body.dark-mode .recent-actions-card *,
+body.dark-mode .section-toolbar *,
+body.dark-mode .mini-table-wrapper *,
+body.dark-mode .admin-modal-window * {
+  opacity: 1;
+}
